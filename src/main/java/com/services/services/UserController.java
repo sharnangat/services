@@ -45,6 +45,12 @@ public class UserController {
 	     headers.setLocation(ucBuilder.path("/user/{id}").buildAndExpand(user.getId()).toUri());
 	     return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	 }
+	 
+	 
+	 
+	 
+	 
+	 
 
 	 @GetMapping(value="/get", headers="Accept=application/json")
 	 public List<User> getAllUser() {	 

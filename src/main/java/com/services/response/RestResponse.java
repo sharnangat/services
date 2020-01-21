@@ -2,30 +2,24 @@ package com.services.response;
 
 public class RestResponse {
 
- private String status;
- 
- private  Object response;
- 
- 
- 
+	private String status;
 
-public String getStatus() {
-	return status;
-}
+	private Object response;
 
-public void setStatus(String status) {
-	this.status = status;
-}
+	public String getStatus() {
+		return status;
+	}
 
-public Object getResponse() {
-	return response;
-}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-public void setResponse(Object response) {
-	this.response = response;
-}
- 
- 
- 
-	
+	public Object getResponse() {
+		return response;
+	}
+
+	public void setResponse(Object response) {
+		this.response = response;
+	}
+
 }

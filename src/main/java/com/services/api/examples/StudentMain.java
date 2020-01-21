@@ -3,6 +3,7 @@ package com.services.api.examples;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class StudentMain {
 
@@ -47,6 +48,11 @@ public class StudentMain {
 			System.out.println("Found code "+one.getStdCode()+ " and Checking  name+"+one.getStdName());
 		}
 		
+		
+		
+	 System.out.println("Java 8 Operations");
+		
+
 	 
 	 
 	 

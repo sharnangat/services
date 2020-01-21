@@ -20,7 +20,12 @@ public class SetMain {
      Student s2 =new Student();
 	 s2.setStdCode("A1");
      s2.setStdName("Sanjay");
-	 
+	
+     
+     Student s3 =new Student();
+	 s2.setStdCode("A2");
+     s2.setStdName("Sanjay");
+	
      
 	 set1.add(s1);
 	 set1.add(s2);
@@ -29,14 +34,15 @@ public class SetMain {
 	
 	Iterator<Student>    itr= set1.iterator();
 	
-	 while(itr.hasNext()){
+	while(itr.hasNext()){
 		 
 		 Student getStd = itr.next();
 		 
 		 System.out.println(getStd.getStdCode()+ " "+getStd.getStdName() );
-		 
-		 
 	 }
+	 
+	 
+	 
 	
 	
 	 

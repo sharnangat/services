@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.ws.rs.core.MediaType;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,9 +19,15 @@ import com.services.response.RestResponse;
 public class MyController {
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
-	public String user(@RequestParam("id") int id) {
-		System.out.println("My Controller is called" + id);
-		return "success" + id;
+	public RestResponse user(@RequestParam("id") int id) {
+		
+	
+		RestResponse response = new RestResponse();
+		
+		response.setResponse("Retrieved Values is"+id);
+		response.setStatus("200");
+		return response;
+		
 	}
 
 	@RequestMapping(value = "/userDetails", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)

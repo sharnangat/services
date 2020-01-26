@@ -1,4 +1,4 @@
-package com.services.services;
+package com.services.feedback.application;
 
 import java.util.List;
 

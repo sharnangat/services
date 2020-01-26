@@ -1,4 +1,4 @@
-package com.services.services;
+package com.services.feedback.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

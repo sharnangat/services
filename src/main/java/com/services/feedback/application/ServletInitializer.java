@@ -1,4 +1,4 @@
-package com.services.services;
+package com.services.feedback.application;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

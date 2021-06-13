@@ -14,6 +14,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	
 	private String userCode;
 
 	private String userName;
@@ -22,14 +26,11 @@ public class User {
 
 	private String email;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	
 
 	@Column(name="country")
 	private String country;
 	@Column(name="name")
-	
 	private String name;
 	
 	

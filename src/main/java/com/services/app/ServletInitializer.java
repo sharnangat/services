@@ -1,9 +1,7 @@
-package com.services.feedback.application;
+package com.services.app;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-
-import com.services.app.ServicesApplication;
 
 public class ServletInitializer extends SpringBootServletInitializer {
 

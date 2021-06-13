@@ -43,18 +43,35 @@ public class SubjectController {
 
 		return entity;
 	}
-	
+
 	@RequestMapping("/gets")
-	
-	public @ResponseBody ResponseEntity fetchById(@RequestParam int  id ) {
-				
-	Optional<Subject> s=	subjectService.fetchById1(id);
-		
+
+	public @ResponseBody ResponseEntity fetchById(@RequestParam int id) {
+
+		Optional<Subject> s = subjectService.fetchById1(id);
+
 		ResponseEntity entity = new ResponseEntity(s, HttpStatus.OK);
-		
+
 		return entity;
-		
+
 	}
-	
+
+	@RequestMapping("/courses")
+	public @ResponseBody ResponseEntity getCourses(@RequestParam String course) {
+
+		List<Subject> subjectList = subjectService.findAllCourses(course);
+
+		ResponseEntity entity;
+
+		if (subjectList.isEmpty()) {
+			entity = new ResponseEntity(subjectList, HttpStatus.NO_CONTENT);
+
+		} else {
+
+			entity = new ResponseEntity(subjectList, HttpStatus.OK);
+		}
+		return entity;
+
+	}
 
 }

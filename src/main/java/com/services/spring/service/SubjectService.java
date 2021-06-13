@@ -3,8 +3,6 @@ package com.services.spring.service;
 import java.util.List;
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +34,7 @@ public class SubjectService {
 	}
 
 	public Optional<Subject> fetchById(int x) {
-	
+
 		Optional<Subject> s = subjectRepository.findById(x);
 		System.out.print("Data got" + s.get());
 
@@ -46,6 +44,13 @@ public class SubjectService {
 
 	public Optional<Subject> fetchById1(int id) {
 		return subjectRepository.findById(id);
+	}
+
+	public List<Subject> findAllCourses(String cname) {
+
+		List<Subject> subectList = subjectRepository.findByCourse(cname);
+
+		return subectList;
 	}
 
 }

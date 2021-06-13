@@ -18,3 +18,9 @@ create table STUDENT (
 
 select * from address;
 select * from Student;# services
+create database db_example;
+use db_example;
+create user 'springuser'@'%' identified by 'ThePassword'; 
+
+grant all on db_example.* to 'springuser'@'%';
+create user 'springuser'@'%' identified by 'ThePassword'; 

@@ -1,6 +1,7 @@
 package com.services.spring.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -14,14 +15,12 @@ import com.services.repository.SubjectRepository;
 @Service
 public class SubjectService {
 
-	
 	@Autowired
 	private SubjectRepository subjectRepository;
 
 	public void addSubject(SubjectDTO dto) {
-		
 
-		Subject subject =new Subject();
+		Subject subject = new Subject();
 
 		subject.setClass_name(dto.getClass_name());
 		subject.setSubjectName(dto.getSubjectName());
@@ -29,11 +28,24 @@ public class SubjectService {
 		subjectRepository.save(subject);
 
 	}
+
+	public List<Subject> fetchList() {
+
+		return (List<Subject>) subjectRepository.findAll();
+
+	}
+
+	public Optional<Subject> fetchById(int x) {
 	
-   public List<Subject> fetchList(){
-	   
-	   return (List<Subject>) subjectRepository.findAll();
-	   
-   }	
+		Optional<Subject> s = subjectRepository.findById(x);
+		System.out.print("Data got" + s.get());
+
+		return s;
+
+	}
+
+	public Optional<Subject> fetchById1(int id) {
+		return subjectRepository.findById(id);
+	}
 
 }

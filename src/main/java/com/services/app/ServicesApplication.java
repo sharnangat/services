@@ -15,10 +15,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         DataSourceAutoConfiguration.class, //
         DataSourceTransactionManagerAutoConfiguration.class, //
         HibernateJpaAutoConfiguration.class })
-
 @EnableJpaRepositories("com.services.repository")
 @EntityScan("com.services.model")
-@ComponentScan(basePackages={"com","com.services.feedback.application","com.services.feedback.controller","com.services.spring.service"})
+@ComponentScan(basePackages={"com","com.services.feedback.controller","com.services.spring.service"})
 public class ServicesApplication {
 
 	public static void main(String[] args) {

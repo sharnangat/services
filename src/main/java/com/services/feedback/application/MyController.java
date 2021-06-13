@@ -30,7 +30,7 @@ public class MyController {
 		
 	}
 
-	@RequestMapping(value = "/userDetails", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "/details", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
 	public RestResponse execute() {
 
 		RestResponse response = new RestResponse();

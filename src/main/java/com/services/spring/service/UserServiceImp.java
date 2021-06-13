@@ -13,6 +13,7 @@ import com.services.spring.dao.UserDao;
 @Service
 @Transactional
 public class UserServiceImp implements UserService {
+	
 	@Autowired
 	UserDao userDao;
 

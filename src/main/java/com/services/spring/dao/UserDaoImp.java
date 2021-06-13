@@ -12,6 +12,7 @@ import com.services.model.User;
 
 @Repository
 public class UserDaoImp implements UserDao{
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 	  

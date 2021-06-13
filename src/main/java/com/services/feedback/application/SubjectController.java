@@ -1,9 +1,14 @@
 package com.services.feedback.application;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.services.feedback.model.dto.SubjectDTO;
@@ -18,11 +23,23 @@ public class SubjectController {
 	private SubjectService subjectService;
 
 	@RequestMapping(path = "/add", method = RequestMethod.POST)
-	public String executeAddSubject(@RequestBody Subject dto) {
+	public @ResponseBody ResponseEntity executeAddSubject(@RequestBody SubjectDTO dto) {
 
 		subjectService.addSubject(dto);
 
-		return "Success";
+		ResponseEntity entity = new ResponseEntity(dto, HttpStatus.CREATED);
+
+		return entity;
+	}
+
+	@RequestMapping("/fetch")
+	public @ResponseBody ResponseEntity fetchData() {
+
+		List<Subject> lst = subjectService.fetchList();
+
+		ResponseEntity entity = new ResponseEntity(lst, HttpStatus.OK);
+
+		return entity;
 	}
 
 }

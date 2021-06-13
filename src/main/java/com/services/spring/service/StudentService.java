@@ -10,7 +10,7 @@ import com.services.repository.AddressRepository;
 import com.services.repository.StudentRepository;
 
 @Service
-public class OneToOneService {
+public class StudentService {
 
 	@Autowired
 	private StudentRepository studentRepo;

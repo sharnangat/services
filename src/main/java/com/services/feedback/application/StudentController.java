@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.services.feedback.model.dto.OneToOneDTO;
-import com.services.spring.service.OneToOneService;
+import com.services.spring.service.StudentService;
 
 @RestController
 
 public class StudentController {
 
 	@Autowired
-	private OneToOneService service;
+	private StudentService service;
 
 	@RequestMapping(path = "/oneToOne", method = RequestMethod.POST)
 	public ResponseEntity addOneToOne(@RequestBody OneToOneDTO dto) {
@@ -26,5 +26,14 @@ public class StudentController {
 		return  new ResponseEntity(dto,HttpStatus.CREATED);
 
 	}
+	
+	
+	@RequestMapping(path="/fetch",method=RequestMethod.GET)
 
+	public void fetchStudentDetails() {
+		
+		
+		
+	}
+	
 }

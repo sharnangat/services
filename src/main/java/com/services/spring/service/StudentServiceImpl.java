@@ -1,5 +1,8 @@
 package com.services.spring.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +24,9 @@ public class StudentServiceImpl implements StudentService
 	@Autowired
 	private AddressRepository addressRepo;
 
+	
+	
+	
 	public void saveOneToOneData(OneToOneDTO dto) {
 
 		Student student = new Student(dto.getFirstName(), dto.getLastName(), dto.getSection());
@@ -30,6 +36,24 @@ public class StudentServiceImpl implements StudentService
 		student.setAddress(address);
 		studentRepo.save(student);
 
+	}
+
+	@Override
+	public List<Student> fetchStudents() {
+		// TODO Auto-generated method stub
+		
+	
+	    List<Student> studentList= (List<Student>) studentRepo.findAll();
+		return studentList;
+	}
+
+	@Override
+	public Student fetchById(int id) {
+		// TODO Auto-generated method stub
+
+		Optional<Student> std = studentRepo.getStudent(id);
+
+		return std.get();
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.services.spring.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,10 @@ import com.services.repository.StudentRepository;
 
 public interface StudentService {
 
-	public void saveOneToOneData(OneToOneDTO dto);	
+	public void saveOneToOneData(OneToOneDTO dto);
+
+	public List<Student> fetchStudents();
+
+	public Student fetchById(int id);
 
 }

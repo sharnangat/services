@@ -9,24 +9,8 @@ import com.services.model.Student;
 import com.services.repository.AddressRepository;
 import com.services.repository.StudentRepository;
 
-@Service
-public class StudentService {
+public interface StudentService {
 
-	@Autowired
-	private StudentRepository studentRepo;
-
-	@Autowired
-	private AddressRepository addressRepo;
-
-	public void saveOneToOneData(OneToOneDTO dto) {
-
-		Student student = new Student(dto.getFirstName(), dto.getLastName(), dto.getSection());
-		Address address = new Address(dto.getStreet(), dto.getStreet(), dto.getCountry());
-
-		addressRepo.save(address);
-		student.setAddress(address);
-		studentRepo.save(student);
-
-	}
+	public void saveOneToOneData(OneToOneDTO dto);	
 
 }

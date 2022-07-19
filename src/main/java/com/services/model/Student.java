@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
  
+// documented by sayali
 @Entity
 @Table(name = "STUDENT")
 public class Student {

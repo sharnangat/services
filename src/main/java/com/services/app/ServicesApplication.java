@@ -11,9 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = { //
-        DataSourceAutoConfiguration.class, //
-        DataSourceTransactionManagerAutoConfiguration.class, //
+@EnableAutoConfiguration(exclude = { 
+        DataSourceAutoConfiguration.class, 
+        DataSourceTransactionManagerAutoConfiguration.class,
         HibernateJpaAutoConfiguration.class })
 @EnableJpaRepositories("com.services.repository")
 @EntityScan("com.services.model")

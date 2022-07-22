@@ -40,8 +40,6 @@ public class StudentServiceImpl implements StudentService
 
 	@Override
 	public List<Student> fetchStudents() {
-		// TODO Auto-generated method stub
-		
 	
 	    List<Student> studentList= (List<Student>) studentRepo.findAll();
 		return studentList;
@@ -49,10 +47,9 @@ public class StudentServiceImpl implements StudentService
 
 	@Override
 	public Student fetchById(int id) {
-		// TODO Auto-generated method stub
-
+		
+		
 		Optional<Student> std = studentRepo.getStudent(id);
-
 		return std.get();
 	}
 

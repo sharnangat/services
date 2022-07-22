@@ -6,7 +6,21 @@ public class Student {
  private String stdName;
 
  
- public String getStdCode() {
+ 
+
+
+public Student(String stdCode, String stdName) {
+	super();
+	this.stdCode = stdCode;
+	this.stdName = stdName;
+}
+
+public Student() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+public String getStdCode() {
 	return stdCode;
 }
 

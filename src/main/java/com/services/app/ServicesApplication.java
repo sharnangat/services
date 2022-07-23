@@ -11,20 +11,20 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = { //
-        DataSourceAutoConfiguration.class, //
-        DataSourceTransactionManagerAutoConfiguration.class, //
+@EnableAutoConfiguration(exclude = { 
+        DataSourceAutoConfiguration.class, 
+        DataSourceTransactionManagerAutoConfiguration.class,
         HibernateJpaAutoConfiguration.class })
-@EnableJpaRepositories("com.services.repository")
+//@EnableJpaRepositories("com.services.repository")
+
 @EntityScan("com.services.model")
-@ComponentScan(basePackages={"com","com.services.feedback.controller","com.services.spring.service"})
+//@ComponentScan(basePackages={"com","com.services.feedback.controller","com.services.spring.service"})
+@ComponentScan(basePackages = {"com.services"})
 public class ServicesApplication {
 
-	public static void main(String[] args) {
-		
-	   
+	public static void main(String[] args) 
+	{
 		SpringApplication.run(ServicesApplication.class, args);
-		
-		
+	
 	}
 }
